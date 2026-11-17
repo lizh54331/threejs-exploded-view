@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>拆解可视化模板</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23070c12%27/%3E%3Cpath d=%27M8 22h16v2H8zM10 14h12v2H10zM12 8h8v2h-8z%27 fill=%27%2335d6ff%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="./style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "./vendor/three.module.js",
+    "three/addons/": "./vendor/"
+  }
+}
+</script>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div id="labels"></div>
+
+<header class="top">
+  <div class="brand">
+    <span class="name" id="title">拆解可视化</span>
+    <span class="sub" id="subtitle">EXPLODED VIEW / 模板工程</span>
+  </div>
+  <div class="badges">
+    <span id="fps">— fps</span>
+    <span>three.js</span>
+    <span id="scale-note">1 单位 = 1 m</span>
+  </div>
+</header>
+
+<aside class="panel parts">
+  <div class="ph"><h2>构件清单</h2><span class="count" id="count">— UNITS</span></div>
+  <ul id="partList"></ul>
+  <div class="pf">
+    <button id="btnExplode" class="primary">拆解</button>
+    <button id="btnReset">复位视角</button>
+  </div>
+</aside>
+
+<section class="panel detail" id="detail">
+  <div class="tag" id="dTag">未选中构件</div>
+  <h2 id="dName">点击构件查看详情</h2>
+  <p id="dDesc">点左侧清单或直接点场景里的构件，会播放拆解动画并高亮，这里显示构造说明与参数。</p>
+  <div class="params" id="dParams"></div>
+</section>
+
+<section class="panel specs" id="specs">
+  <div class="ph"><h2>整体参数</h2><span class="count">SPEC</span></div>
+  <table id="specTable"></table>
+</section>
+
+<div class="guide" id="guide">
+  <span><b>左键拖拽</b> 旋转</span>
+  <span><b>滚轮</b> 缩放</span>
+  <span><b>右键拖拽</b> 平移</span>
+  <span><b>点击构件</b> 拆解 + 详情</span>
+  <span><b>空格</b> 拆解/重组</span>
+  <span><b>R</b> 复位</span>
+  <button id="guideClose">×</button>
+</div>
+
+<div id="loading">正在生成模型…</div>
+<script type="module" src="./js/main.js"></script>
+</body>
+</html>
