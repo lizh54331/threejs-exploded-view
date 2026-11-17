@@ -6,6 +6,16 @@
 
 > Turn a single photo into an interactive exploded-view page with Three.js — no external 3D models, no image assets, everything generated in code.
 
+## 预览
+
+模板自带示例（4 件木边几）在无头 Chromium 下的真实截图：
+
+| 合体 | 拆解 · 选中「横撑」 |
+|---|---|
+| ![合体](docs/preview-collapsed.jpg) | ![拆解](docs/preview-exploded.jpg) |
+
+左侧构件清单、右侧详情与整体参数、底部操作引导，构件标签跟随投影并自动避让。
+
 ## 它解决什么
 
 照着图做 3D 不难，难的是「做出来还好看、还能验收」。这个技能把这些硬经验固化了：
